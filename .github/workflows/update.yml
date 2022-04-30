@@ -14,7 +14,9 @@ jobs:
       GIST_ID: 8e67db8b8b1bfd06982ac0557f85e8a2
       CATEGORY: k
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
+      with:
+        ref: k
 
     - name: Set up Go
       uses: actions/setup-go@v2
