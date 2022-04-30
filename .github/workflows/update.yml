@@ -11,8 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
-      GIST_ID: 5213908b6b1b6325657a41d76b4ba6ae
-      CATEGORY: ik
+      GIST_ID: 585658f180fa125e4305d7b2dc4ee198
+      CATEGORY: i
     steps:
     - uses: actions/checkout@v2
 
