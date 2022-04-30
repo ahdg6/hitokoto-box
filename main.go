@@ -103,7 +103,7 @@ func updateGist(ctx context.Context, token string, gistId string, hitokoto *Resp
 	content := fmt.Sprintf("%s%s\n\nUpdated at %s", hitokoto.Hitokoto, from, now)
 
 	// set gist content to new hitokoto
-	fileName := "📖来点古诗词"
+	fileName := "💭随机哲言"
 	f := gist.Files[github.GistFilename(fileName)]
 	f.Content = &content
 	gist.Files[github.GistFilename(fileName)] = f
