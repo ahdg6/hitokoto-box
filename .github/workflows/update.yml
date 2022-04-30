@@ -2,7 +2,7 @@ name: Update gist with new hitokoto
 
 on:
   push:
-    branches: [ main, k ]
+    branches: [ main ]
   schedule:
     - cron: "0 * * * *"
 jobs:
@@ -14,22 +14,7 @@ jobs:
       GIST_ID: 585658f180fa125e4305d7b2dc4ee198
       CATEGORY: i
     steps:
-    - uses: actions/checkout@v3
-
-    - name: Set up Go
-      uses: actions/setup-go@v2
-      with:
-        go-version: 1.15
-
-    - name: Check out
-      uses: actions/checkout@v2
-
-    - name: Update gist
-      run: go run .
-    
-    - uses: actions/checkout@v3
-      with:
-        ref: k
+    - uses: actions/checkout@v2
 
     - name: Set up Go
       uses: actions/setup-go@v2
