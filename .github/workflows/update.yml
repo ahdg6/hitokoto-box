@@ -2,7 +2,7 @@ name: Update gist with new hitokoto
 
 on:
   push:
-    branches: [ main ]
+    branches: [ k ]
   schedule:
     - cron: "0 * * * *"
 jobs:
