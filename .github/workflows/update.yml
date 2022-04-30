@@ -2,7 +2,7 @@ name: Update gist with new hitokoto
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, k ]
   schedule:
     - cron: "0 * * * *"
 jobs:
@@ -11,10 +11,25 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
-      GIST_ID: 8c2cd8ea266a45c1aa9cb5f78d066b60
-      CATEGORY: a
+      GIST_ID: 585658f180fa125e4305d7b2dc4ee198
+      CATEGORY: i
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
+
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.15
+
+    - name: Check out
+      uses: actions/checkout@v2
+
+    - name: Update gist
+      run: go run .
+    
+    - uses: actions/checkout@v3
+      with:
+        ref: k
 
     - name: Set up Go
       uses: actions/setup-go@v2
